@@ -12,12 +12,22 @@ end
 
 
 
-post '/signup' do
-  @user = User.create(params[:form])
-  # redirect to be determined
+post '/login' do
+  user = User.authenticate(params[:name], params[:password])
+  if user
+    session[:user_id] = user.id
+    redirect '/'
+  else  
+    redirect '/login'
+  end
 end
 
-post '/login' do
-  @user = User.authenticate(params[:form])
-  # redirect to be determined
+post '/create' do
+  user = User.create(params[:form])
+  if user.valid?
+    session[:user_id] = user.id
+    redirect '/'
+  else
+    redirect '/login'
+  end
 end
