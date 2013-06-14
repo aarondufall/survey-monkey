@@ -1,3 +1,4 @@
 class Answer < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :option
+  belongs_to :response
 end
