@@ -10,8 +10,6 @@ get '/login' do
   erb :login
 end
 
-
-
 post '/login' do
   user = User.authenticate(params[:name], params[:password])
   if user
