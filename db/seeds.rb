@@ -4,26 +4,27 @@ rich = User.create(:name => "Rich",
                             :email => "rich@dbc.com",
                             :password => 'password')
 
-s = Survey.new(:title => 'Fruit',
-               :link => 'http://www.google.com',
+s = Survey.new(:title => 'Important Stuff',
+               :link => '/survey_results/1',
                :user => rich)
 
 question_text = "Who is the greatest actor of all time?"
-options = ["Arnold Schwarzenneger", "John Wayne", "Dirty Harry", "Joe Blow"]
+options = ["Arnold Schwarzenneger", "John Wayne", "Clint Eastwood", "Nicolas Cage", "William Shatner"]
 
 
 q = s.questions.build(:question_text => question_text,
                       :mandatory => false,
                       :helper_text => "Answer from the heart")
 
-3.times do
-  o = q.options.build(:option_text => )
+options.each do |option|
+  o = q.options.build(:option_text => option)
+
+    (rand(5)+1).times do
+      a = o.answers.build
+      s.answers << a
+    end
 end
 
-2.times do
-  a = o.answers.build
-  s.answers << a
-end
 
 
 
@@ -36,12 +37,14 @@ q = s.questions.build(:question_text => question_text,
 
 options.each do |option|
   o = q.options.build(:option_text => option)
+
+  (rand(5)+1).times do
+    a = o.answers.build
+    s.answers << a
+  end
+
 end
 
-2.times do
-  a = o.answers.build
-  s.answers << a
-end
 
 
 question_text = "If you had to live on a planet, which would it be?"
@@ -53,12 +56,15 @@ q = s.questions.build(:question_text => question_text,
 
 options.each do |option|
   o = q.options.build(:option_text => option)
+
+  (rand(5)+1).times do
+    a = o.answers.build
+    s.answers << a
+  end
+
 end
 
-8.times do
-  a = o.answers.build
-  s.answers << a
-end
+
 
 
 question_text = "What's the coolest vehicle you could ride around in?"
@@ -69,13 +75,16 @@ q = s.questions.build(:question_text => question_text,
                         :helper_text => "Answer from the heart")
 
 options.each do |option|
-  o = q.options.build(:option_text => )
+  o = q.options.build(:option_text => option )
+
+  (rand(5)+1).times do
+    a = o.answers.build
+    s.answers << a
+  end
+
 end
 
-2.times do
-  a = o.answers.build
-  s.answers << a
-end
+
 
 s.save
 
