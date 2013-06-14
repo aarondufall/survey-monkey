@@ -1,10 +1,8 @@
-<% @survey.each do |survey| %>
-<p>Title: <%= survey.title %></p>
-  <% survey.questions.each do |question|
+<p>Title: <%= @survey.title %></p>
+  <% @survey.questions.each do |question| %>
     <div class="response_count">
-      <p><a href="/individual_survey_results/<%= survey.id %>"><%= question.name %></a> | <%= question.response.count %></p>
+      <p><%= question.question_text %> | <%= question.answers.count %></p>
      </div>
   <% end %>
-<% end %>
 
-<a href="#">Return to Main Page</a>
+<a href="/">Return to Main Page</a>
