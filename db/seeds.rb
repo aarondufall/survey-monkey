@@ -9,7 +9,6 @@ s = Survey.new(:title => 'Fruit',
                :user => rich)
 
 
-<<<<<<< HEAD
 
 5.times do
   q = s.questions.build(:question_text => Faker::Lorem.sentence(5),
@@ -24,7 +23,6 @@ s = Survey.new(:title => 'Fruit',
       end
     end
 end
-=======
 q = s.questions.build(:question_text => 'Which is the greatest fruit of all time?',
                         :mandatory => false,
                         :helper_text => "Answer from the mind")
@@ -62,32 +60,5 @@ o = q.options.build(:option_text => 'strawberries')
   a = o.answers.build
   s.answers << a
 
->>>>>>> master
 
 s.save
-
-
-
-<<<<<<< HEAD
-=======
-# Lorem Ipsum seeder
-# 5.times do
-#   q = s.questions.build(:question_text => Faker::Lorem.sentence(5),
-#                         :mandatory => false,
-#                         :helper_text => "Answer from the heart")
-#     3.times do
-#       o = q.options.build(:option_text => Faker::Lorem.sentence(3))
-
-#       2.times do
-#         a = o.answers.build
-#         s.answers << a
-#       end
-#     end
-# end
-# s.save
-
-
-
-
->>>>>>> master
-
