@@ -1,0 +1,87 @@
+<!-- INPUT FORMS -->
+
+<div id="login">
+  <form method='POST' action="#">
+    <label for="username">Username:</label>
+    <input type="text" name="user[username]" placeholder="username">
+    <label for="password">Password:</label>
+    <input type="password" name="user[password]" placeholder="password">
+    <input type="submit" value="Login">
+  </form>
+</div>
+
+<div id="signup">
+  <form method='POST' action="#">
+    <label for="username">Username:</label>
+    <input type="text" name="user[username]" placeholder="username">
+    <label for="email">Email:</label>
+    <input type="text" name="user[email]" placeholder="email">
+    <label for="password">Password:</label>
+    <input type="password" name="user[password]" placeholder="password">
+    <input type="submit" value="Sign Up">
+  </form>
+</div>
+
+<div id="survey">
+  <form method='POST' action="#">
+    <label for="title">Title:</label>
+    <input type="text" name="survey[title]" placeholder="survey title">
+    <label for="helper_text">Helper Text:</label>
+    <textarea rows="4" cols="50" name="question[helper]"></textarea>
+    <input type="submit" value="Create Survey">
+  </form>
+</div>
+
+<div id="question">
+  <form method='POST' action='#'>
+    <label for="question_text">Question Text:</label>
+    <input type="text" name="question[text]" placeholder="question text">
+    <!-- add options as required -->
+    <input type="submit" value="Submit Question">
+   </form>
+</div>
+
+<div class="option">
+  <label for="option#{num}">Option #{num}</label>
+  <input class="option" type="text" name="option#{num}" value="">
+</div>
+
+<!-- DISPLAY/INPUT -->
+
+<div id="question_response_header">
+  <label for="question_text">Question Text:</label>
+  <p><%= question.text %></p>
+  <label for="helper_text">Helper Text:</label>
+  <p><%= question.helper %></p>
+    <form method='POST' action="#">
+      <input class="option_response" type="radio" name="option#{num}" value="option#{text}">
+      <!-- add options as required -->
+      <input type="submit" value="Submit Answer">
+    </form>
+</div>
+
+
+<input class="option_response" type="radio" name="option#{num}" value="option#{text}">
+
+<!-- DISPLAY -->
+<!--
+Survey Display:
+Loop thru surveys for a given user id
+ -->
+<div class="survey_list">
+  <p><%= survey.title %> | <%= survey.response.count %></p>
+</div>
+<a href="#">Create New Survey</a>
+<!--
+Response Count:
+Wrap response count in loop under title
+<% survey.questions.each do |question| %>
+<% end %> -->
+
+<div class="response_count">
+  <p><%= question.name %> | <%= question.response.count %></p>
+</div>
+<a href="#">Return to Main Page</a>
+
+
+
