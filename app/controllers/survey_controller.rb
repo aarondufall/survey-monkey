@@ -1,8 +1,7 @@
 get '/take_survey/:survey_id' do
   @survey = Survey.find_by_id(params[:survey_id])
-  # send to the page to take the survey
+  erb :take_survey
 end
-
 
 get '/create_survey' do
   erb :create_survey
@@ -42,7 +41,7 @@ post '/take_survey' do
   answers = (params[:answers])
 
   answers.each do |option, option_id|
-    option = option.find_by_id(option_id])
+    option = option.find_by_id(option_id)
     a = option.answers.create
     survey.answers << a
   end
