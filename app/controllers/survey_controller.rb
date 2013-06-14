@@ -3,7 +3,6 @@ get '/take_survey/:survey_id' do
   # send to the page to take the survey
 end
 
-
 get '/create_survey' do
   erb :create_survey
 end
