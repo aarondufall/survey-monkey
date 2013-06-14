@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- 
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/application.js"></script>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/application.css">
 
-  <title></title>
-</head>
-<body>
-  <div id="page-wrap">
-    <nav>
-      <% unless session[:user] %>
-        <a href="/signup">Sign Up<a>
-        <a href="/login">Login<a>
-      <% else %>
-        <a href="/logout">Logout<a>
-      <% end %>
-    </nav>
-    <%= yield %>
-  </div>
-</body>
+    </head>
+    <body>
+      <header>
+        <nav>
+          <span class="title"><a href="#">survey monster</a></span>
+          <ul>
+            <li><a href="#">Create Survey</a></li>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Sign In</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <%= yield %>
+
+      <footer>
+        get the answer you need
+      </footer>
+    </body>
 </html>
