@@ -49,6 +49,8 @@ o = q.options.build(:option_text => 'strawberries')
 
 s.save
 
+
+
 # 5.times do
 #   q = s.questions.build(:question_text => Faker::Lorem.sentence(5),
 #                         :mandatory => false,
