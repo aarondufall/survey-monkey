@@ -1,5 +1,5 @@
 get '/' do
-  erb :index
+  erb :home
 end
 
 get '/signup' do
@@ -15,7 +15,7 @@ post '/login' do
   if user
     session[:user_id] = user.id
     redirect '/'
-  else  
+  else
     redirect '/login'
   end
 end

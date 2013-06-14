@@ -1,14 +1,15 @@
+<div id="content" class='main lob_heading'>
 <% @survey.questions.each do |question| %>
-<div id="question_response_header">
-  <label for="question_text">Question Text:</label>
-  <p><%= question.question_text %></p>
+<div id="question_response_header" class='info_box'>
+  <h2><%= question.question_text %></h2>
   <label for="helper_text">Helper Text:</label>
   <p><%= question.helper_text %></p>
     <form method='POST' action="/take_survey">
       <% question.options.each_with_index do |option, index| %>
       <input class="option_response" type="radio" name="<%= index %> " value="<%= option.option_text %>"><%= option.option_text %><br>
       <% end %>
-      <input type="submit" value="Submit Answer">
+      <input type="submit" value="Submit Answer" class='regular_button'>
     </form>
 </div>
 <%end %>
+</div>
