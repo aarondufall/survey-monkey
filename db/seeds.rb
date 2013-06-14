@@ -2,7 +2,7 @@
 
 rich = User.create(:name => "Rich",
                             :email => "rich@dbc.com",
-                            :password_hash => 'password')
+                            :password => 'password')
 
 s = Survey.new(:title => 'Fruit',
                :link => 'http://www.google.com',
