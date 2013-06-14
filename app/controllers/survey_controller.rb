@@ -24,17 +24,30 @@ end
 
 
 post '/create_survey' do
-  params[:form]
-  survey = Survey.new(params[:survey])
-    #iterate through questions
-    q = s.questions.build(params[:question])
-      #iterate through options
-      o = q.options.build(params[:options])
+  survey = Survey.new(params[:title])
+  questions = (params[:questions])
 
+    questions.each do |question|
+      q = s.questions.build(:question_text => question[:question_text]
+                            :mandatory => question[:mandatory],
+                            :helper_text => question[:helper_text])
+
+        question[:question_options].each do |option|
+           question.options.build(:option_text => params[:option_text])
+        end
+    end
+
+  survey.save
+  # redirect to view the survey or something
 end
+
+
 
 
 post '/take_survey' do
   params[:form]
 end
 
+t.text :question_text
+      t.boolean :mandatory
+      t.string :helper_text
