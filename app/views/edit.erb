@@ -1,0 +1,45 @@
+<div id="wrapping">
+
+<div class="questionnaire info_box lob_heading form">  
+  <h2>New Survey</h2>
+
+  <form name="input" action="/edit/<%=@survey.id%>" method="post">
+
+  <label for="title">Title:</label> 
+  <input type="text" name="title" id="title" required=true value='<%= @survey.title%>'>
+  <div id="add_question"><p>Add New Question  <i class="icon-plus"></i></p></div>
+</div>
+
+
+<% @survey.questions.each_with_index do |question, q_index| %>
+
+<div id="questions" class="info_box lob_heading form"> 
+  <div class='qe'><i class='icon-remove-sign delete_question'></i> 
+    <label>Question:</label>
+    <input id='enter' type='text' name='questions[question_<%=q_index%>][name]' value="<%=question.question_text %>">
+
+    <% question.options.each_with_index do |option, o_index| %>
+      <div class='q'>
+        <label>Option:</label> 
+        <input id='enter' type='text' name='questions[question_<%=q_index%>][options][opt_<%=o_index%>]' value='<%=option.option_text %>'>
+        <% if o_index == 0%>
+          <i class="icon-plus" id="add_answer"></i>
+        <% end%>  
+
+        <i class='icon-trash delete_option'></i>
+      </div>
+    <% end %>
+  </div>
+</div>    
+
+
+<% end %>
+ </div>       
+    
+<div class="lob_heading form">    
+  <input type="submit" value="Submit" id="submit" class='regular_button'>
+  </form>
+</div>
+
+
+

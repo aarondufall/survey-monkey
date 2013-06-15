@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :surveys
   attr_accessor :password_confirmation
   before_save :encrypt_password
   validates :name, presence: true

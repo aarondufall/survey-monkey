@@ -1,10 +1,15 @@
-<p>Title: <%= @survey.title %></p>
+<h2>Title: <%= @survey.title %></h2>
   <% @survey.questions.each do |question| %>
-    <div class="response_count">
-      <h3>Question</h3>
-      <p><%= question.question_text %>
-      <p>Responses</p>
-       <%= question.answers.count %></p>
+    <div  id="survey_list" class="info_box">
+      <h3> <%= question.question_text %></h3>
+
+      <center>Responses <%= question.answers.count %></center>
+       
+          <hr>
+          <% question.options.each do |option| %>
+          <p> <%= option.option_text %> <span class="results">Votes: <%= option.answers.count %></span>  </p>
+          <hr>
+          <% end %>
 
      </div>
   <% end %>

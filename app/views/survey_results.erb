@@ -1,7 +1,10 @@
 <!-- survey_results.erb -->
+<div id="survey_list" class="info_box">
+<h2>Your Surveys</h2>
+<hr>
 <% @surveys.each do |survey| %>
-<div class="survey_list">
-  <p><a href="/survey_results/<%= survey.id %>"><%= survey.title %></a> | Responses: <%= survey.answers.count %></p>
+    <p><i class="icon-edit"></i> <a href="/survey_results/<%= survey.id %>"><%= survey.title %></a> <span class="results">Responses: <%= survey.answers.count %> </span></p>
+    <hr>
+  <% end %>
 </div>
-<% end %>
-<a href="/create_survey">Create New Survey</a>
+

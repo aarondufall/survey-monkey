@@ -28,10 +28,6 @@ var deleteQuestion = function (event) {
     $(this).parent(".qe").parent("#questions").remove();
 };
 
-// var findClosestQuestion = function (target) {
-//     return $(target).parent(".qe");
-// };
-
 var deleteOption = function (event) {
     event.preventDefault();
     var target = this;

@@ -2,7 +2,7 @@
   <% @survey.questions.each do |question| %>
       <p><%= question.question_text %></p>
       <% question.options.each do |options| %>
-        <p><% options.text %></p>
+        <p><% options.option_text %></p>
       <% end %>
   <% end %>
 

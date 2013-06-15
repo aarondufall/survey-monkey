@@ -1,5 +1,10 @@
 get '/' do
+  if session[:user]
+    @surveys = current_user.surveys
+    erb :survey_results
+  else
     erb :home
+  end
 end
 
 enable :sessions
