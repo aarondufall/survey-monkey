@@ -9,10 +9,12 @@ get '/create_survey' do
 end
 
 get '/survey_results' do
-  # @surveys = Survey.find_by_user_id(current_user)
-  # is this feature to be depracated?
-  @surveys = Survey.all 
-  erb :survey_results
+  @surveys = Survey.find_by_user_id(current_user)
+  if @surveys
+    erb :survey_results
+  else
+    erb :create_survey
+  end
 end
 
 get '/survey_results/:survey_id' do
@@ -32,8 +34,8 @@ post '/create_survey' do
            q.options.build(:option_text => option_text)
         end
     end
-  @survey.save
-  erb :individual_survey_results
+  survey.save
+  erb :survey
 end
 
 
