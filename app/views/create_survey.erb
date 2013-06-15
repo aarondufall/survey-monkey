@@ -1,0 +1,20 @@
+<div class="questionnaire">
+    <p>Test Questionnaire</p>
+
+    <form name="input" action="/create_survey" method="post">
+
+    Title: <input type="text" name="title"><br>
+
+        <p><button id="add_question">Add Question</button></p><hr><hr>
+    <div id="questions">
+
+    <div class='qe'> <p>Question: <input id='enter' type='text' name='questions[question_0][name]' placeholder='Enter your question' ><button class='delete_question'>Delete</button></p><p><button id='add_answer'>Add Option</button></p><hr>
+
+    <div class='q'> <p>Option: <input id='enter' type='text' name='questions[question_0][options][opt_0]' placeholder='Enter your Option' ><button class='delete_option'>Delete</button></p></div><hr>
+
+    </div>    
+    </div>    
+    <p><input type="submit" value="Submit" id="submit"></p>
+    </form>
+    <input type="button" value="Reset" onClick="document.location.reload(true)">
+</div>
