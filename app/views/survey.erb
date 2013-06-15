@@ -1,0 +1,9 @@
+<p>Title: <%= @survey.title %></p>
+  <% @survey.questions.each do |question| %>
+      <p><%= question.question_text %></p>
+      <% question.options.each do |options| %>
+        <p><% options.text %></p>
+      <% end %>
+  <% end %>
+
+<a href="/">Return to Main Page</a>
