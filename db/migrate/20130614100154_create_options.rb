@@ -6,5 +6,8 @@ class CreateOptions < ActiveRecord::Migration
       
       t.timestamps
     end
+
+    add_index :options, :question_id
+
   end
 end
