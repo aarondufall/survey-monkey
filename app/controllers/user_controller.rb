@@ -21,7 +21,7 @@ post '/login' do
 end
 
 post '/create' do
-  user = User.create(params[:form])
+  user = User.create(params[:user])
   if user.valid?
     session[:user_id] = user.id
     redirect '/'
