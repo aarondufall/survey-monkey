@@ -32,7 +32,7 @@ post '/create_survey' do
         end
     end
   survey.save
-  # redirect to view the survey or something
+  erb :survey
 end
 
 
