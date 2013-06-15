@@ -1,5 +1,5 @@
 get '/' do
-  erb :login
+  erb :home
 end
 
 get '/signup' do
