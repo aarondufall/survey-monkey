@@ -1,5 +1,5 @@
 get '/' do
-  erb :home
+  erb :login
 end
 
 get '/signup' do
@@ -12,9 +12,10 @@ end
 
 post '/login' do
   user = User.authenticate(params[:name], params[:password])
+
   if user
     session[:user_id] = user.id
-    redirect '/'
+    redirect '/create_survey'
   else
     redirect '/login'
   end
