@@ -28,11 +28,12 @@
           <span class="title"><a href="#">survey monster</a></span>
           <ul>
             <li><a href="/create_survey">Create Survey</a></li>
-            <% unless session[:user] %>
+            <% if logged_in? %>
+              <li><a href="/logout">Sign out</a></li>
+              <li>Welcome, <%= current_user.name %></li>
+            <% else %>
               <li><a href="/signup">Sign Up</a></li>
               <li><a href="/login">Sign In</a></li>
-            <% else %>
-              <li><a href="/logout">Sign out</a></li>
             <% end %>
           </ul>
         </nav>
