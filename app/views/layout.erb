@@ -25,7 +25,7 @@
     <body>
       <header>
         <nav>
-          <span class="title"><a href="#">survey monster</a></span>
+          <span class="title"><a href="/">survey monster</a></span>
           <ul>
             <li><a href="/create_survey">Create Survey</a></li>
             <% if logged_in? %>
@@ -39,7 +39,11 @@
         </nav>
       </header>
 
+<div id="wrap">
+  <div id="main" class="clearfix">
       <%= yield %>
+ </div>
+</div>      
 
       <footer>
         get the answer you need

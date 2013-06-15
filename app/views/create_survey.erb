@@ -1,30 +1,34 @@
-<div class="questionnaire info_box lob_heading form">
-    
-    <h2>Test Questionnaire</h2>
+<div id="wrapping">
 
-    <form name="input" action="/create_survey" method="post">
+<div class="questionnaire info_box lob_heading form">  
+  <h2>New Survey</h2>
 
-    <lable for="title">Title:</lable> 
-    <input type="text" name="title" id="title">
-    <button id="add_question">Add Question</button>
-    <hr>
-    <div id="questions">
-      <div class='qe'> 
-        <lable>Question:</lable>
-        <input id='enter' type='text' name='questions[question_0][name]' placeholder='Enter your question' >
-        <button class='delete_question'>Delete</button>
-        <button id='add_answer'>Add Option</button>
-        <hr>
-        
-        <div class='q'>
-          <lable>Option:</lable> 
-          <input id='enter' type='text' name='questions[question_0][options][opt_0]' placeholder='Enter your Option' >
-          <button class='delete_option'>Delete</button>
-        </div>
-        <hr>
-      </div>    
-    </div>    
-    <input type="submit" value="Submit" id="submit" class='regular_button'>
-    </form>
-    <input type="button" value="Reset" onClick="document.location.reload(true)" class="alt_button">
+  <form name="input" action="/create_survey" method="post">
+
+  <label for="title">Title:</label> 
+  <input type="text" name="title" id="title" required=true placeholder='Enter your Title' autofocus>
+  <div id="add_question"><p>Add New Question  <i class="icon-plus"></i></p></div>
 </div>
+
+<div id="questions" class="info_box lob_heading form"> 
+  <div class='qe'> 
+    <label>Question:</label>
+    <input id='enter' type='text' name='questions[question_0][name]' placeholder='Enter your question' required=true>
+
+    <div class='q'>
+      <label>Option:</label> 
+      <input id='enter' type='text' name='questions[question_0][options][opt_0]' placeholder='Enter your Option' required=true>
+      <i class="icon-plus" id="add_answer"></i>
+    </div>
+  </div>
+</div>      
+        
+        
+    </div>
+<div class=" lob_heading form">    
+  <input type="submit" value="Submit" id="submit" class='regular_button'>
+  </form>
+</div>
+
+
+

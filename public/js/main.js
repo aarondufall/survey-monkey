@@ -17,8 +17,7 @@ var addQuestion = function (event) {
 
 var addOption = function (event) {
     event.preventDefault();
-    var target = this;
-    var closest = findClosestQuestion(target);
+    var closest = $(this).parent(".q").parent(".qe");
     var num = closest.index(".qe");
     var num2 = closest.children(".q").last().index(".q")+1;
     questionnaire.addOption(closest, num, num2);
@@ -26,14 +25,12 @@ var addOption = function (event) {
 
 var deleteQuestion = function (event) {
     event.preventDefault();
-    var target = this;
-    var closest = findClosestQuestion(target);
-    closest.remove();
+    $(this).parent(".qe").parent("#questions").remove();
 };
 
-var findClosestQuestion = function (target) {
-    return $(target).parent("p").parent(".qe");
-};
+// var findClosestQuestion = function (target) {
+//     return $(target).parent(".qe");
+// };
 
 var deleteOption = function (event) {
     event.preventDefault();
@@ -43,5 +40,5 @@ var deleteOption = function (event) {
 };
 
 var findClosestOption = function (target) {
-    return $(target).parent("p").parent(".q");
+    return $(target).parent(".q");
 };
