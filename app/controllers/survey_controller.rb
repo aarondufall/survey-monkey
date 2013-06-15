@@ -10,7 +10,8 @@ end
 
 get '/survey_results' do
   # @surveys = Survey.find_by_user_id(current_user)
-  @surveys = Survey.all #for testing purposes
+  # is this feature to be depracated?
+  @surveys = Survey.all 
   erb :survey_results
 end
 

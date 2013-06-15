@@ -3,7 +3,7 @@
   <div id="question_response_header" class='info_box'>
   <form method='POST' action="/take_survey">
   <input type="hidden" name="survey_id" value="<%= @survey.id %>"  >
-
+  <h1><%= @survey.title %><h2>
   <% @survey.questions.each do |question| %>
   <h2><%= question.question_text %></h2>
 
