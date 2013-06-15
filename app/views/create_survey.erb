@@ -1,20 +1,30 @@
-<div class="questionnaire">
-    <p>Test Questionnaire</p>
+<div class="questionnaire info_box lob_heading form">
+    
+    <h2>Test Questionnaire</h2>
 
     <form name="input" action="/create_survey" method="post">
 
-    Title: <input type="text" name="title"><br>
-
-        <p><button id="add_question">Add Question</button></p><hr><hr>
+    <lable for="title">Title:</lable> 
+    <input type="text" name="title" id="title">
+    <button id="add_question">Add Question</button>
+    <hr>
     <div id="questions">
-
-    <div class='qe'> <p>Question: <input id='enter' type='text' name='questions[question_0][name]' placeholder='Enter your question' ><button class='delete_question'>Delete</button></p><p><button id='add_answer'>Add Option</button></p><hr>
-
-    <div class='q'> <p>Option: <input id='enter' type='text' name='questions[question_0][options][opt_0]' placeholder='Enter your Option' ><button class='delete_option'>Delete</button></p></div><hr>
-
+      <div class='qe'> 
+        <lable>Question:</lable>
+        <input id='enter' type='text' name='questions[question_0][name]' placeholder='Enter your question' >
+        <button class='delete_question'>Delete</button>
+        <button id='add_answer'>Add Option</button>
+        <hr>
+        
+        <div class='q'>
+          <lable>Option:</lable> 
+          <input id='enter' type='text' name='questions[question_0][options][opt_0]' placeholder='Enter your Option' >
+          <button class='delete_option'>Delete</button>
+        </div>
+        <hr>
+      </div>    
     </div>    
-    </div>    
-    <p><input type="submit" value="Submit" id="submit"></p>
+    <input type="submit" value="Submit" id="submit" class='regular_button'>
     </form>
-    <input type="button" value="Reset" onClick="document.location.reload(true)">
+    <input type="button" value="Reset" onClick="document.location.reload(true)" class="alt_button">
 </div>
