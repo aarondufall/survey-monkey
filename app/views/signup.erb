@@ -1,20 +1,24 @@
-<h1>Sign Up!</h1>
 
 <% if @errors %>
   <%= erb :_errors, locals: {errors: @errors} %>
 <% end %>
 
-<div id="signup">
-  <form action="/create" method="post" class="form">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="user[name]"><br>
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="user[email]"><br>
-    <label for="password">Password:</label>
-    <input type="text" id="password" name="user[password]"><br>
-    <label for="password_confirmation">Password Confirmation:</label>
-    <input type="text" id="password_confirmation" name="user[password_confirmation]"><br>
-    <input type="submit" value="Add Yo'self" class="submit-button">
-  </form>
+<div id="signup" class="info_box lob_heading form">
+  <h1>Sign Up!</h1>
+    <form action="/signup" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="user[name]">
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="user[email]">
+
+      <label for="password">Password:</label>
+      <input type="text" id="password" name="user[password]"><br>
+
+      <label for="password_confirmation">Password Confirmation:</label>
+      <input type="text" id="password_confirmation" name="user[password_confirmation]">
+      
+      <input type="submit" value="Add Yo'self" class="regular_button">
+    </form>
 </div>
 

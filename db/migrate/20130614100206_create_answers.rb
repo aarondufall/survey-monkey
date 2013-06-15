@@ -6,5 +6,11 @@ class CreateAnswers < ActiveRecord::Migration
       
       t.timestamps
     end
-  end
+
+      add_index :answers, :option_id
+      add_index :answers, :survey_id
+ end
+
+
+
 end

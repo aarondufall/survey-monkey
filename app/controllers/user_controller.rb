@@ -2,30 +2,41 @@ get '/' do
   erb :home
 end
 
+enable :sessions
+
 get '/signup' do
   erb :signup
+end
+
+post '/signup' do
+  @user = User.new(params[:user])
+  if @user.save
+    session[:user] = @user.id
+    redirect '/'
+  else
+    @errors = @user.errors
+    puts @user.errors.keys
+    erb :signup
+  end
 end
 
 get '/login' do
   erb :login
 end
 
+
 post '/login' do
-  user = User.authenticate(params[:name], params[:password])
-  if user
-    session[:user_id] = user.id
+  if User.authenticate(params[:user][:name], params[:user][:password])
+    @user = User.find_by_name(params[:user][:name])
+    session[:user] = @user.id
     redirect '/'
   else
-    redirect '/login'
+    @errors = {error: "Invalid name or password."}
+    erb :login
   end
 end
 
-post '/create' do
-  user = User.create(params[:user])
-  if user.valid?
-    session[:user_id] = user.id
-    redirect '/'
-  else
-    redirect '/login'
-  end
+get '/logout' do
+  session.clear
+  redirect '/'
 end

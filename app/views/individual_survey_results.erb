@@ -1,7 +1,11 @@
 <p>Title: <%= @survey.title %></p>
   <% @survey.questions.each do |question| %>
     <div class="response_count">
-      <p><%= question.question_text %> | <%= question.answers.count %></p>
+      <h3>Question</h3>
+      <p><%= question.question_text %>
+      <p>Responses</p>
+       <%= question.answers.count %></p>
+
      </div>
   <% end %>
 
