@@ -1,34 +1,33 @@
+
+<form name="input" action="/create_survey" method="post">
 <div id="wrapping">
+  <div class="questionnaire info_box lob_heading form">  
+    <h2>New Survey</h2>
+      <label for="title">Title:</label> 
+      <input type="text" name="title" id="title" required=true placeholder='Enter your Title' autofocus>
+      <div id="add_question"><p>Add New Question  <i class="icon-plus"></i></p></div>
+  </div>
 
-<div class="questionnaire info_box lob_heading form">  
-  <h2>New Survey</h2>
+  <div id="questions" class="info_box lob_heading form"> 
+    <span class='qe'> 
+      <label>Question:</label>
+      <input id='enter' type='text' name='questions[question_0][name]' placeholder='Enter your question' required=true>
 
-  <form name="input" action="/create_survey" method="post">
-
-  <label for="title">Title:</label> 
-  <input type="text" name="title" id="title" required=true placeholder='Enter your Title' autofocus>
-  <div id="add_question"><p>Add New Question  <i class="icon-plus"></i></p></div>
-</div>
-
-<div id="questions" class="info_box lob_heading form"> 
-  <div class='qe'> 
-    <label>Question:</label>
-    <input id='enter' type='text' name='questions[question_0][name]' placeholder='Enter your question' required=true>
-
-    <div class='q'>
+      <span class='q'>
       <label>Option:</label> 
       <input id='enter' type='text' name='questions[question_0][options][opt_0]' placeholder='Enter your Option' required=true>
       <i class="icon-plus" id="add_answer"></i>
+      </span>
+    </span>
+  </div>      
+          
+          
+    <div class="lob_heading form">    
+      <input type="submit" value="Submit" id="submit" class='regular_button'>
     </div>
   </div>
-</div>      
-        
-        
-    </div>
-<div class="lob_heading form">    
-  <input type="submit" value="Submit" id="submit" class='regular_button'>
-  </form>
 </div>
+  </form>
 
 
 

@@ -72,7 +72,7 @@ post '/create_survey' do
         end
     end
   @survey.save
-  erb :survey
+  erb :individual_survey_results
 end
 
 

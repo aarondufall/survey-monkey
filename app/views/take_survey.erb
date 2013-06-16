@@ -1,19 +1,16 @@
 <div id="content" class='main lob_heading'>
 
-  <div id="question_response_header" class='info_box'>
+  <div id="question_response_header" class='info_box form'>
   <form method='POST' action="/take_survey">
   <input type="hidden" name="survey_id" value="<%= @survey.id %>"  >
   <h1><%= @survey.title %><h2>
   <% @survey.questions.each do |question| %>
   <h2><%= question.question_text %></h2>
-
-  <% question.options.each_with_index do |option, index| %>
-  <input class="option_response" type="radio" name="answers[<%= question.id %>]" value="<%= option.id %>"> <%= option.option_text %> <br>
-
-  <% end %>
+    <% question.options.each_with_index do |option, index| %>
+      <input class="option_response" type="radio" name="answers[<%= question.id %>]" value="<%= option.id %>"> <%= option.option_text %> <br>
+    <% end %>
   <% end %>
   
-
   <input type="submit" value="Submit Answer" class='regular_button'>
   </form>
 
