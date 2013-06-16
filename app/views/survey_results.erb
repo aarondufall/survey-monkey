@@ -3,7 +3,7 @@
 <h2>Your Surveys</h2>
 <hr>
 <% @surveys.each do |survey| %>
-    <p><i class="icon-edit"></i> <a href="/survey_results/<%= survey.id %>"><%= survey.title %></a> <span class="results">Responses: <%= survey.answers.count %> </span></p>
+    <p><a href="/take_survey/<%= survey.id %>"><i class="icon-eye-open"></i></a> <a href="/edit/<%= survey.id %>"><i class="icon-edit"></i></a> <a href="/survey_results/<%= survey.id %>"><%= survey.title %></a><span class="results">Responses: <%= survey.answers.count %> </span></p>
     <hr>
   <% end %>
 </div>

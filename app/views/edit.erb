@@ -1,9 +1,11 @@
+<form name="input" action="/edit/<%=@survey.id%>" method="post">
+
 <div id="wrapping">
 
 <div class="questionnaire info_box lob_heading form">  
-  <h2>New Survey</h2>
+  <h2>Edit Survey</h2>
 
-  <form name="input" action="/edit/<%=@survey.id%>" method="post">
+
 
   <label for="title">Title:</label> 
   <input type="text" name="title" id="title" required=true value='<%= @survey.title%>'>
@@ -38,8 +40,8 @@
     
 <div class="lob_heading form">    
   <input type="submit" value="Submit" id="submit" class='regular_button'>
-  </form>
-</div>
 
+</div>
+  </form>
 
 

@@ -48,7 +48,7 @@ post '/edit/:id' do
     end
   if @survey.save
     old_survey.destroy
-    erb :survey
+    redirect "/survey_results"
   else
     redirect "/edit/#{old_survey.id}"
   end  

@@ -174,7 +174,7 @@ header a{
 }
 
 .info_box {
-  clear:both;
+
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -605,6 +605,23 @@ footer {
 #add_question:hover {
   color: green;
 }
+
+.icon-edit {
+  color: black;
+}
+
+.icon-edit:hover {
+  color: gray;
+}
+
+.icon-eye-open {
+  color: black;
+}
+
+.icon-eye-open:hover {
+  color: gray;
+}
+
 
 
 /*Sticky Footer*/
